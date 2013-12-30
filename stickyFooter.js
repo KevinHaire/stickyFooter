@@ -1,6 +1,6 @@
 $(window).ready(function(){
 
-	var elementToExpand = "#buttonContainer";
+	var elementToExpand = "#elementToExpand";
 
 	stickyFooter();
 
