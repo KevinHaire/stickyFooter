@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>stickyFooter Demo</title>
+	<style>
+		body, h1, h2, p {
+			margin:0;
+			padding:0;
+		}
+		* {
+		  -moz-box-sizing: border-box;
+		  -webkit-box-sizing: border-box;
+		  box-sizing: border-box;
+		  font-family:arial;
+		}
+		header {
+			height:150px;
+			background:grey;
+			text-align:center;
+			padding:30px 0px 0px 0px;
+		}	
+		#mainContent {
+			height:200px;
+			background:#bada55;
+			padding:30px 0px 0px 0px;
+		}
+		footer {
+			height:150px;
+			background:grey;
+			text-align:center;
+		}
+		.contain {
+			width:900px;
+			margin:auto;
+		}
+		p {
+			float:left;
+			width:50%;
+		}
+		button {
+			margin:30px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="contain">
+			<h1>This is your header!</h1>
+		</div>
+	</header>
+
+	<section id="mainContent">
+		<div class="contain">
+			<h2>This is your short content section</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, nulla, corporis maiores reiciendis est illo sint dolorum in sed sunt adipisci ratione voluptate dolor ipsa nemo cumque odio ab excepturi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, ad, quisquam, fuga, cum voluptates aperiam quae molestias nemo nostrum quasi aut excepturi a ab? Repellendus, reprehenderit ducimus illum! Eveniet, veritatis.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, alias, officia, et iusto magni ratione facere error esse assumenda voluptas vel laudantium quasi reprehenderit mollitia eum. Vel, nulla quia deserunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, quis odit maxime accusantium minima sit repellat quasi ducimus neque deserunt repellendus dolores esse veniam illo animi! Aliquam voluptas hic facilis.</p>
+		</div>
+	</section>
+
+	<footer>
+		<div class="contain">
+			<button id="sticky">stickyFooter</button>
+			<h2>This is your footer!</h2>
+		</div>
+	</footer>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+
+		$("#sticky").bind("click", stickyFooter);
+
+		$(window).resize(function(){
+			stickyFooter();
+		});
+
+		var elementToExpand = "#mainContent";
+
+		function stickyFooter(currentContentHeight, contentHeight) {
+
+			var currentContentHeight = $(elementToExpand).innerHeight();
+			var bodyHeight = $("body").height();
+			var vpHeight = $(window).height();
+			var contentHeight = vpHeight - bodyHeight
+
+			$(elementToExpand).css({
+		    'min-height' : currentContentHeight + contentHeight       
+		  });
+
+		};
+	</script>
+</body>
+</html>
