@@ -1,4 +1,4 @@
 stickyFooter
 ============
 
-Calculates the number of pixles needed to fill the browser height if your content doesnt fill. Change the elementToExpand variable to the element you wish to grow to fill the gap. Will also run on window resize. 
+Figures out how many pixles your content needs to grow to fill the page and expands any element (elementToExpand variable) to fill the space on the page (put your footer at the bottom). Also runs on window resize.
