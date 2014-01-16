@@ -1,14 +1,12 @@
 $(window).ready(function(){
 
-	var elementToExpand = "#elementToExpand";
-
-	stickyFooter();
+	stickyFooter('.elementToExpand');
 
 	$(window).resize(function(){
-		stickyFooter();
+		stickyFooter('.elementToExpand');
 	});
 
-	function stickyFooter(currentContentHeight, contentHeight) {
+	function stickyFooter(elementToExpand) {
 
 		var currentContentHeight = $(elementToExpand).innerHeight();
 		var bodyHeight = $("body").height();
